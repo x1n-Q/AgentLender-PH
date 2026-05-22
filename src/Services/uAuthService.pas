@@ -58,7 +58,7 @@ begin
       AUser.FullName := Q.FieldByName('full_name').AsString;
       AUser.Role := StrToRole(Q.FieldByName('role').AsString);
       AUser.IsActive := Q.FieldByName('is_active').AsInteger = 1;
-      AUser.CreatedAt := Q.FieldByName('created_at').AsDateTime;
+      AUser.CreatedAt := DBToDateTime(Q.FieldByName('created_at'));
       AppState.SetUser(AUser);
       TAuditService.Log(AUser.Id, 'LOGIN', 'user', AUser.Id, AUsername);
       Result := True;
@@ -134,7 +134,7 @@ begin
         U.FullName := Q.FieldByName('full_name').AsString;
         U.Role := StrToRole(Q.FieldByName('role').AsString);
         U.IsActive := Q.FieldByName('is_active').AsInteger = 1;
-        U.CreatedAt := Q.FieldByName('created_at').AsDateTime;
+        U.CreatedAt := DBToDateTime(Q.FieldByName('created_at'));
         L.Add(U);
         Q.Next;
       end;
