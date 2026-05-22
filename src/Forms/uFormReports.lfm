@@ -1,0 +1,160 @@
+object FormReports: TFormReports
+  Left = 821
+  Height = 600
+  Top = 446
+  Width = 900
+  Caption = 'Reports'
+  ClientHeight = 0
+  ClientWidth = 0
+  Position = poMainFormCenter
+  LCLVersion = '4.6.0.0'
+  OnShow = FormShow
+  object PanelTop: TPanel
+    Left = 0
+    Height = 80
+    Top = 0
+    Width = 900
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 80
+    ClientWidth = 900
+    TabOrder = 0
+    object LabelKind: TLabel
+      Left = 16
+      Height = 15
+      Top = 8
+      Width = 35
+      Caption = 'Report'
+      ParentColor = False
+    end
+    object LabelFrom: TLabel
+      Left = 250
+      Height = 15
+      Top = 8
+      Width = 28
+      Caption = 'From'
+      ParentColor = False
+    end
+    object LabelTo: TLabel
+      Left = 410
+      Height = 15
+      Top = 8
+      Width = 12
+      Caption = 'To'
+      ParentColor = False
+    end
+    object LabelSessions: TLabel
+      Left = 250
+      Height = 15
+      Top = 8
+      Width = 39
+      Caption = 'Session'
+      ParentColor = False
+    end
+    object ComboKind: TComboBox
+      Left = 16
+      Height = 23
+      Top = 28
+      Width = 220
+      ItemHeight = 15
+      Style = csDropDownList
+      TabOrder = 0
+      OnChange = ComboKindChange
+    end
+    object DateFrom: TDateTimePicker
+      Left = 250
+      Height = 23
+      Top = 28
+      Width = 83
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 1
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 45000
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object DateTo: TDateTimePicker
+      Left = 410
+      Height = 23
+      Top = 28
+      Width = 83
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 2
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 45000
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object ComboSession: TComboBox
+      Left = 250
+      Height = 23
+      Top = 28
+      Width = 320
+      ItemHeight = 15
+      Style = csDropDownList
+      TabOrder = 3
+    end
+    object ButtonRun: TButton
+      Left = 600
+      Height = 32
+      Top = 22
+      Width = 130
+      Caption = 'Run report'
+      Default = True
+      TabOrder = 4
+      OnClick = ButtonRunClick
+    end
+    object ButtonClose: TButton
+      Left = 750
+      Height = 32
+      Top = 22
+      Width = 130
+      Caption = 'Close'
+      TabOrder = 5
+      OnClick = ButtonCloseClick
+    end
+  end
+  object StringGridReport: TStringGrid
+    Left = 0
+    Height = 400
+    Top = 80
+    Width = 900
+    Align = alClient
+    DefaultColWidth = 150
+    DefaultRowHeight = 22
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+    TabOrder = 1
+  end
+  object MemoSummary: TMemo
+    Left = 0
+    Height = 120
+    Top = 480
+    Width = 900
+    Align = alBottom
+    Font.Height = -12
+    Font.Name = 'Consolas'
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 2
+  end
+end

@@ -1,0 +1,21 @@
+object DM: TDM
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 240
+  HorizontalOffset = 425
+  VerticalOffset = 230
+  Width = 320
+  object SQLConnection: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = True
+    Left = 64
+    Top = 32
+  end
+  object SQLTransaction: TSQLTransaction
+    Active = False
+    Action = caCommitRetaining
+    Left = 64
+    Top = 96
+  end
+end

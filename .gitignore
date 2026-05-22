@@ -1,0 +1,28 @@
+# Lazarus build artifacts
+lib/
+backup/
+*.compiled
+*.bak
+*.~*
+*.lps
+*.res
+*.or
+*.dbg
+*.exe.manifest
+ppas.bat
+ppaslnk.lpr
+
+# Compiled binary (large; rebuild from source)
+AgentLedgerPH.exe
+
+# Runtime data — do NOT commit the live DB or backups
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+backups/
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+desktop.ini

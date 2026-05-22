@@ -1,0 +1,173 @@
+object FormFeeRules: TFormFeeRules
+  Left = 0
+  Top = 0
+  Caption = 'Fee Rules'
+  ClientHeight = 580
+  ClientWidth = 880
+  Position = poMainFormCenter
+  OnShow = FormShow
+  LCLVersion = '3.0'
+  object LabelHeader: TLabel
+    Left = 16
+    Height = 19
+    Top = 12
+    Width = 200
+    Caption = 'Configure fee rules'
+    Font.Height = -13
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object PanelEditor: TPanel
+    Left = 0
+    Height = 140
+    Top = 440
+    Width = 880
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 0
+    object LabelType: TLabel
+      Left = 16
+      Height = 17
+      Top = 12
+      Width = 30
+      Caption = 'Type'
+      ParentColor = False
+    end
+    object LabelMin: TLabel
+      Left = 240
+      Height = 17
+      Top = 12
+      Width = 24
+      Caption = 'Min'
+      ParentColor = False
+    end
+    object LabelMax: TLabel
+      Left = 360
+      Height = 17
+      Top = 12
+      Width = 25
+      Caption = 'Max'
+      ParentColor = False
+    end
+    object LabelFee: TLabel
+      Left = 480
+      Height = 17
+      Top = 12
+      Width = 84
+      Caption = 'Fee (or %)'
+      ParentColor = False
+    end
+    object ComboType: TComboBox
+      Left = 16
+      Height = 25
+      Top = 32
+      Width = 200
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object EditMin: TEdit
+      Left = 240
+      Height = 25
+      Top = 32
+      Width = 100
+      TabOrder = 1
+      Text = '0.00'
+    end
+    object EditMax: TEdit
+      Left = 360
+      Height = 25
+      Top = 32
+      Width = 100
+      TabOrder = 2
+      Text = '0.00'
+    end
+    object EditFee: TEdit
+      Left = 480
+      Height = 25
+      Top = 32
+      Width = 100
+      TabOrder = 3
+      Text = '0.00'
+    end
+    object CheckBoxPct: TCheckBox
+      Left = 600
+      Height = 19
+      Top = 34
+      Width = 120
+      Caption = 'Percentage'
+      TabOrder = 4
+    end
+    object CheckBoxActive: TCheckBox
+      Left = 600
+      Height = 19
+      Top = 56
+      Width = 120
+      Caption = 'Active'
+      Checked = True
+      State = cbChecked
+      TabOrder = 5
+    end
+    object ButtonNew: TButton
+      Left = 16
+      Height = 32
+      Top = 84
+      Width = 100
+      Caption = 'New'
+      TabOrder = 6
+      OnClick = ButtonNewClick
+    end
+    object ButtonSave: TButton
+      Left = 124
+      Height = 32
+      Top = 84
+      Width = 120
+      Caption = 'Save'
+      Default = True
+      TabOrder = 7
+      OnClick = ButtonSaveClick
+    end
+    object ButtonDelete: TButton
+      Left = 252
+      Height = 32
+      Top = 84
+      Width = 100
+      Caption = 'Delete'
+      TabOrder = 8
+      OnClick = ButtonDeleteClick
+    end
+    object ButtonClose: TButton
+      Left = 770
+      Height = 32
+      Top = 84
+      Width = 100
+      Caption = 'Close'
+      TabOrder = 9
+      OnClick = ButtonCloseClick
+    end
+  end
+  object StringGridRules: TStringGrid
+    Left = 0
+    Height = 404
+    Top = 36
+    Width = 880
+    Align = alClient
+    ColCount = 7
+    DefaultColWidth = 100
+    DefaultRowHeight = 22
+    FixedCols = 0
+    RowCount = 2
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+    TabOrder = 1
+    OnClick = StringGridRulesClick
+    ColWidths = (
+      50
+      150
+      100
+      100
+      100
+      80
+      80
+    )
+  end
+end

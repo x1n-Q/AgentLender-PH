@@ -1,0 +1,160 @@
+object FormUsers: TFormUsers
+  Left = 0
+  Top = 0
+  Caption = 'Users'
+  ClientHeight = 540
+  ClientWidth = 820
+  Position = poMainFormCenter
+  OnShow = FormShow
+  LCLVersion = '3.0'
+  object LabelHeader: TLabel
+    Left = 16
+    Height = 19
+    Top = 12
+    Width = 130
+    Caption = 'Manage users'
+    Font.Height = -13
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object PanelEditor: TPanel
+    Left = 0
+    Height = 160
+    Top = 380
+    Width = 820
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 0
+    object LabelUsername: TLabel
+      Left = 16
+      Height = 17
+      Top = 8
+      Width = 60
+      Caption = 'Username'
+      ParentColor = False
+    end
+    object LabelFullName: TLabel
+      Left = 240
+      Height = 17
+      Top = 8
+      Width = 56
+      Caption = 'Full name'
+      ParentColor = False
+    end
+    object LabelRole: TLabel
+      Left = 520
+      Height = 17
+      Top = 8
+      Width = 25
+      Caption = 'Role'
+      ParentColor = False
+    end
+    object LabelPassword: TLabel
+      Left = 16
+      Height = 17
+      Top = 56
+      Width = 56
+      Caption = 'Password'
+      ParentColor = False
+    end
+    object EditUsername: TEdit
+      Left = 16
+      Height = 25
+      Top = 28
+      Width = 200
+      TabOrder = 0
+    end
+    object EditFullName: TEdit
+      Left = 240
+      Height = 25
+      Top = 28
+      Width = 260
+      TabOrder = 1
+    end
+    object ComboRole: TComboBox
+      Left = 520
+      Height = 25
+      Top = 28
+      Width = 130
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object EditPassword: TEdit
+      Left = 16
+      Height = 25
+      Top = 76
+      Width = 200
+      PasswordChar = '*'
+      TabOrder = 3
+    end
+    object CheckBoxActive: TCheckBox
+      Left = 240
+      Height = 19
+      Top = 78
+      Width = 80
+      Caption = 'Active'
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+    end
+    object ButtonAdd: TButton
+      Left = 16
+      Height = 32
+      Top = 116
+      Width = 130
+      Caption = 'Add user'
+      TabOrder = 5
+      OnClick = ButtonAddClick
+    end
+    object ButtonChangePass: TButton
+      Left = 154
+      Height = 32
+      Top = 116
+      Width = 160
+      Caption = 'Change password'
+      TabOrder = 6
+      OnClick = ButtonChangePassClick
+    end
+    object ButtonSetActive: TButton
+      Left = 322
+      Height = 32
+      Top = 116
+      Width = 160
+      Caption = 'Apply Active flag'
+      TabOrder = 7
+      OnClick = ButtonSetActiveClick
+    end
+    object ButtonClose: TButton
+      Left = 710
+      Height = 32
+      Top = 116
+      Width = 100
+      Caption = 'Close'
+      TabOrder = 8
+      OnClick = ButtonCloseClick
+    end
+  end
+  object StringGridUsers: TStringGrid
+    Left = 0
+    Height = 344
+    Top = 36
+    Width = 820
+    Align = alClient
+    ColCount = 5
+    DefaultColWidth = 130
+    DefaultRowHeight = 22
+    FixedCols = 0
+    RowCount = 2
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+    TabOrder = 1
+    OnClick = StringGridUsersClick
+    ColWidths = (
+      50
+      180
+      280
+      120
+      100
+    )
+  end
+end

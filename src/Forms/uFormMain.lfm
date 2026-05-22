@@ -1,0 +1,371 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'AgentLedger PH'
+  ClientHeight = 640
+  ClientWidth = 1024
+  Menu = MainMenu1
+  Position = poScreenCenter
+  WindowState = wsMaximized
+  OnClose = FormClose
+  OnShow = FormShow
+  LCLVersion = '3.0'
+  object PanelTop: TPanel
+    Left = 0
+    Height = 64
+    Top = 0
+    Width = 1024
+    Align = alTop
+    BevelOuter = bvNone
+    Color = clNavy
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object LabelHeader: TLabel
+      Left = 16
+      Height = 28
+      Top = 10
+      Width = 200
+      Caption = 'AgentLedger PH'
+      Font.Color = clWhite
+      Font.Height = -19
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object LabelSession: TLabel
+      Left = 16
+      Height = 17
+      Top = 40
+      Width = 400
+      Caption = 'No open session.'
+      Font.Color = clSilver
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 617
+    Width = 1024
+    Panels = <
+      item
+        Text = 'User:'
+        Width = 350
+      end
+      item
+        Text = 'DB:'
+        Width = 400
+      end
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object PanelDash: TPanel
+    Left = 0
+    Height = 553
+    Top = 64
+    Width = 1024
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+    object LabelTxnHeader: TLabel
+      Left = 16
+      Height = 19
+      Top = 232
+      Width = 280
+      Caption = 'Recent transactions (this session)'
+      Font.Height = -13
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object GroupBoxSession: TGroupBox
+      Left = 16
+      Height = 200
+      Top = 16
+      Width = 600
+      Caption = '  Current session  '
+      TabOrder = 0
+      object LabelStartingCash: TLabel
+        Left = 16
+        Height = 17
+        Top = 32
+        Width = 90
+        Caption = 'Starting cash:'
+        ParentColor = False
+      end
+      object LabelStartingWallet: TLabel
+        Left = 16
+        Height = 17
+        Top = 56
+        Width = 100
+        Caption = 'Starting wallet:'
+        ParentColor = False
+      end
+      object LabelExpectedCash: TLabel
+        Left = 16
+        Height = 17
+        Top = 96
+        Width = 110
+        Caption = 'Expected cash:'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LabelExpectedWallet: TLabel
+        Left = 16
+        Height = 17
+        Top = 120
+        Width = 120
+        Caption = 'Expected wallet:'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LabelFeesEarned: TLabel
+        Left = 16
+        Height = 17
+        Top = 152
+        Width = 100
+        Caption = 'Fees earned:'
+        Font.Color = clGreen
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LabelTxnCount: TLabel
+        Left = 320
+        Height = 17
+        Top = 152
+        Width = 90
+        Caption = 'Transactions:'
+        ParentColor = False
+      end
+      object LabelStartingCashV: TLabel
+        Left = 200
+        Height = 17
+        Top = 32
+        Width = 10
+        Caption = '-'
+        ParentColor = False
+      end
+      object LabelStartingWalletV: TLabel
+        Left = 200
+        Height = 17
+        Top = 56
+        Width = 10
+        Caption = '-'
+        ParentColor = False
+      end
+      object LabelExpectedCashV: TLabel
+        Left = 200
+        Height = 17
+        Top = 96
+        Width = 10
+        Caption = '-'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LabelExpectedWalletV: TLabel
+        Left = 200
+        Height = 17
+        Top = 120
+        Width = 10
+        Caption = '-'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LabelFeesEarnedV: TLabel
+        Left = 200
+        Height = 17
+        Top = 152
+        Width = 10
+        Caption = '-'
+        Font.Color = clGreen
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LabelTxnCountV: TLabel
+        Left = 480
+        Height = 17
+        Top = 152
+        Width = 10
+        Caption = '-'
+        ParentColor = False
+      end
+    end
+    object PanelButtons: TPanel
+      Left = 632
+      Height = 200
+      Top = 16
+      Width = 376
+      BevelOuter = bvNone
+      TabOrder = 1
+      object ButtonOpenSession: TButton
+        Left = 8
+        Height = 56
+        Top = 8
+        Width = 180
+        Caption = 'Open / View Session'
+        TabOrder = 0
+        OnClick = MenuItemOpenSessionClick
+      end
+      object ButtonNewTxn: TButton
+        Left = 196
+        Height = 56
+        Top = 8
+        Width = 180
+        Caption = '+ New Transaction'
+        Font.Height = -13
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        OnClick = MenuItemNewTxnClick
+      end
+      object ButtonCustomers: TButton
+        Left = 8
+        Height = 40
+        Top = 72
+        Width = 180
+        Caption = 'Customers'
+        TabOrder = 2
+        OnClick = MenuItemCustomersClick
+      end
+      object ButtonUtang: TButton
+        Left = 196
+        Height = 40
+        Top = 72
+        Width = 180
+        Caption = 'Utang'
+        TabOrder = 3
+        OnClick = MenuItemUtangClick
+      end
+      object ButtonReconcile: TButton
+        Left = 8
+        Height = 40
+        Top = 120
+        Width = 180
+        Caption = 'End-of-day Reconcile'
+        TabOrder = 4
+        OnClick = MenuItemReconcileClick
+      end
+      object ButtonReports: TButton
+        Left = 196
+        Height = 40
+        Top = 120
+        Width = 180
+        Caption = 'Reports'
+        TabOrder = 5
+        OnClick = MenuItemReportsClick
+      end
+    end
+    object StringGridTxns: TStringGrid
+      Left = 16
+      Height = 285
+      Top = 256
+      Width = 992
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ColCount = 7
+      DefaultColWidth = 120
+      DefaultRowHeight = 22
+      FixedCols = 0
+      RowCount = 2
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+      TabOrder = 2
+      ColWidths = (
+        60
+        100
+        140
+        120
+        100
+        180
+        80
+      )
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 32
+    Top = 88
+    object MenuFile: TMenuItem
+      Caption = '&File'
+      object MenuItemBackup: TMenuItem
+        Caption = '&Backup database...'
+        OnClick = MenuItemBackupClick
+      end
+      object MenuItemRestore: TMenuItem
+        Caption = '&Restore database...'
+        OnClick = MenuItemRestoreClick
+      end
+      object MenuItemSeed: TMenuItem
+        Caption = '&Seed sample data'
+        OnClick = MenuItemSeedClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemLogout: TMenuItem
+        Caption = '&Logout'
+        OnClick = MenuItemLogoutClick
+      end
+      object MenuItemExit: TMenuItem
+        Caption = 'E&xit'
+        OnClick = MenuItemExitClick
+      end
+    end
+    object MenuSession: TMenuItem
+      Caption = '&Session'
+      object MenuItemOpenSession: TMenuItem
+        Caption = '&Open / View session'
+        OnClick = MenuItemOpenSessionClick
+      end
+      object MenuItemReconcile: TMenuItem
+        Caption = '&End-of-day reconcile'
+        OnClick = MenuItemReconcileClick
+      end
+    end
+    object MenuTransactions: TMenuItem
+      Caption = '&Transactions'
+      object MenuItemNewTxn: TMenuItem
+        Caption = '&New transaction...'
+        ShortCut = 16462
+        OnClick = MenuItemNewTxnClick
+      end
+    end
+    object MenuMaster: TMenuItem
+      Caption = '&Master'
+      object MenuItemCustomers: TMenuItem
+        Caption = '&Customers'
+        OnClick = MenuItemCustomersClick
+      end
+      object MenuItemUtang: TMenuItem
+        Caption = '&Utang'
+        OnClick = MenuItemUtangClick
+      end
+      object MenuItemFeeRules: TMenuItem
+        Caption = '&Fee rules'
+        OnClick = MenuItemFeeRulesClick
+      end
+      object MenuItemUsers: TMenuItem
+        Caption = '&Users'
+        OnClick = MenuItemUsersClick
+      end
+    end
+    object MenuReports: TMenuItem
+      Caption = '&Reports'
+      object MenuItemReports: TMenuItem
+        Caption = '&Reports...'
+        OnClick = MenuItemReportsClick
+      end
+      object MenuItemAuditLog: TMenuItem
+        Caption = '&Audit log...'
+        OnClick = MenuItemAuditLogClick
+      end
+    end
+  end
+end
